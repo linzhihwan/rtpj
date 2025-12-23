@@ -1,74 +1,64 @@
-
-import Link from "next/link"; 
-export default function App() { 
-  return ( <nav style={{ padding: "10px", background: "#eee" }}> 
-  <Link href="/" style={{ marginRight: "15px" }}>Home</Link> 
-  <Link href="/about" style={{ marginRight: "15px" }}>About</Link> 
-  <Link href="/contact">Contact</Link> 
-  </nav> 
-  ); 
-}
-
-/* import React, { useState } from "react"; 
-
-function App() { 
-  const [count, setCount] = useState(0); 
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const fruits = ["🍎 사과", "🍌 바나나", "🍊 오렌지"];
-  const [name, setName] = useState("");
-
-  return ( 
-  <div> 
-    <input 
-    type="text" 
-    placeholder="이름을 입력하세요" 
-    value={name} 
-    onChange={(e) => setName(e.target.value)} /> 
-    <p>안녕하세요, {name || "익명"}님!</p> 
-  </div> 
-
-  ); 
-
-  return (
-    <ul> {fruits.map((fruit, index) => ( <li key={index}>{fruit}</li> ))} </ul>
-  );   
-} 
-export default App; */
-
-
-/* import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [users, setUsers] = useState([]);
+  const [form, setForm] = useState({ name: "", email: "" });
+
+  // READ
+  useEffect(() => {
+    axios.get("http://localhost:5000/partner_ccd").then(res => setUsers(res.data));
+  }, []);
+
+  // CREATE
+  const addUser = () => {
+    axios.post("http://localhost:5000/partner_ccd", form).then(res => {
+      setUsers([...partner_ccd, res.data]);
+      setForm({ name: "", email: "" });
+    });
+  };
+
+  // UPDATE
+  const updateUser = (id) => {
+    axios.put(`http://localhost:5000/users/${id}`, { name: "수정된이름", email: "new@email.com" })
+      .then(res => {
+        setUsers(users.map(u => u.id === id ? res.data : u));
+      });
+  };
+
+  // DELETE
+  const deleteUser = (id) => {
+    axios.delete(`http://localhost:5000/users/${id}`).then(() => {
+      setUsers(users.filter(u => u.id !== id));
+    });
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo TEST" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div>
+      <h1>Users</h1>
+      <input
+        placeholder="Name"
+        value={form.name}
+        onChange={e => setForm({ ...form, name: e.target.value })}
+      />
+      <input
+        placeholder="Email"
+        value={form.email}
+        onChange={e => setForm({ ...form, email: e.target.value })}
+      />
+      <button onClick={addUser}>Add User</button>
+
+      <ul>
+        {users.map(u => (
+          <li key={u.id}>
+            {u.name} ({u.email})
+            <button onClick={() => updateUser(u.id)}>Update</button>
+            <button onClick={() => deleteUser(u.id)}>Delete</button>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 }
 
-export default App
- */
+export default App;
