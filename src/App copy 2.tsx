@@ -43,11 +43,11 @@ interface partners {
 
   return (
     <div>
-      <h1>협력사 코드 전환</h1>
+      <h1>Users</h1>
       <input
         placeholder="ccdmd"
-        value={form.ccdmd}
-        onChange={e => setForm({ ...form, ccdmd: e.target.value })}
+        value={form.orgccd}
+        onChange={e => setForm({ ...form, orgccd: e.target.value })}
       />      
       <input
         placeholder="orgccd"

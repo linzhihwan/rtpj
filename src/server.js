@@ -8,41 +8,42 @@ app.use(express.json());
 
 // MySQL 연결
 const db = mysql.createConnection({
-  host: "10.68.0.172:3306",
-  user: "officewdm",
+  host: "10.68.0.172",
+  port: 3306,
+  user: "edoc",
   password: "edoc",
-  database: "edoc"
+  database: "officewdm"
 });
 
 // CREATE
-app.post("/partner_ccd", (req, res) => {
+app.post("/partners", (req, res) => {
   const { ccdmd, orgccd, newccd } = req.body;
-  db.query("INSERT INTO partner_ccd (ccdmd, orgccd, newccd) VALUES (?, ?, ?)", [ccdmd, orgccd, newccd], (err, result) => {
+  db.query("INSERT INTO partner_md (ccdmd, orgccd, newccd) VALUES (?, ?, ?)", [ccdmd, orgccd, newccd], (err, result) => {
     if (err) return res.json(err);
-    res.json({ ccdmd, orgccd, newccd });
+    res.json({ id: orgccd,ccdmd, orgccd, newccd });
   });
 });
 
 // READ
-app.get("/partner_ccd", (req, res) => {
-  db.query("SELECT * FROM partner_ccd", (err, rows) => {
+app.get("/partners", (req, res) => {
+  db.query("SELECT * FROM partner_md", (err, rows) => {
     if (err) return res.json(err);
     res.json(rows);
   });
 });
 
 // UPDATE
-app.put("/partner_ccd/:orgccd", (req, res) => {
+app.put("/partners/:orgccd", (req, res) => {
   const { ccdmd, orgccd, newccd } = req.body;
-  db.query("UPDATE partner_ccd SET ccdmd=?, orgccd=?, newccd=? WHERE  ccdmd=? AND orgccd=?", [ccdmd, orgccd, newccd, req.params.ccdmd, req.params.orgccd], (err) => {
+  db.query("UPDATE partner_md SET ccdmd=?, orgccd=?, newccd=? WHERE  ccdmd=? AND orgccd=?", [ccdmd, orgccd, newccd, req.params.ccdmd, req.params.orgccd], (err) => {
     if (err) return res.json(err);
-    res.json({ id: req.params.id, ccdmd, orgccd, newccd });
+    res.json({ id: req.params.orgccd, ccdmd, orgccd, newccd });
   });
 });
 
 // DELETE
-app.delete("/partner_ccd/:orgccd", (req, res) => {
-  db.query("DELETE FROM partner_ccd WHERE ccdmd=? AND orgccd=?", [req.params.ccdmd, req.params.orgccd], (err) => {
+app.delete("/partners/:orgccd", (req, res) => {
+  db.query("DELETE FROM partner_md WHERE ccdmd=? AND orgccd=?", [req.params.ccdmd, req.params.orgccd], (err) => {
     if (err) return res.json(err);
     res.json({ message: "Deleted successfully" });
   });
