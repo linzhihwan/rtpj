@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-function App() {
+function App3() {
 
   // 1. 타입 정의
 interface partners {
@@ -15,12 +15,12 @@ interface partners {
 
   // READ  ccdmd, orgccd, newccd
   useEffect(() => {
-    axios.get("http://localhost:5173/partners").then(res => setPartners(res.data));
+    axios.get("http://localhost:5000/partners").then(res => setPartners(res.data));
   }, []);
 
   // CREATE
   const addPartner = () => {
-    axios.post("http://localhost:5173/partners", form).then(res => {
+    axios.post("http://localhost:5000/partners", form).then(res => {
       setPartners([...partners, res.data]);      
       setForm({ ccdmd: "MDK", orgccd: "99955588", newccd: "11122233" });
     });
@@ -28,7 +28,7 @@ interface partners {
 
   // UPDATE
   const updatePartner = (orgccd: string) => {
-    axios.put(`http://localhost:5173/partners/${orgccd}`, { ccdmd: "MDK", orgccd: "99955588", newccd: "99966677" })
+    axios.put(`http://localhost:5000/partners/${orgccd}`, { ccdmd: "MDK", orgccd: "99955588", newccd: "99966677" })
       .then(res => {
           setPartners(partners.map(u => u.orgccd === orgccd ? res.data : u));
       });
@@ -36,18 +36,18 @@ interface partners {
 
   // DELETE
   const deletePartner = (orgccd: string) => {
-    axios.delete(`http://localhost:5173/partners/${orgccd}`).then(() => {
+    axios.delete(`http://localhost:5000/partners/${orgccd}`).then(() => {
       setPartners(partners.filter(u => u.orgccd !== orgccd));
     });
   };
 
   return (
     <div>
-      <h1>Users</h1>
+      <h1>협력사 코드 전환</h1>
       <input
         placeholder="ccdmd"
-        value={form.orgccd}
-        onChange={e => setForm({ ...form, orgccd: e.target.value })}
+        value={form.ccdmd}
+        onChange={e => setForm({ ...form, ccdmd: e.target.value })}
       />      
       <input
         placeholder="orgccd"
@@ -64,7 +64,7 @@ interface partners {
       <ul>
         {partners.map(u => (
           <li key={u.orgccd}>
-            {u.ccdmd} ({u.orgccd}, {u.newccd})
+            {u.ccdmd}, {u.orgccd}, {u.newccd}
             <button onClick={() => updatePartner(u.orgccd)}>Update</button>
             <button onClick={() => deletePartner(u.orgccd)}>Delete</button>
           </li>
@@ -74,4 +74,4 @@ interface partners {
   );
 }
 
-export default App;
+export default App3;

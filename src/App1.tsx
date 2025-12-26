@@ -1,7 +1,7 @@
 
 import React, { useState } from "react"; 
 
-function App1() { 
+function App2() { 
   const [count, setCount] = useState(0); 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const fruits = ["🍎 사과", "🍌 바나나", "🍊 오렌지"];
@@ -23,7 +23,7 @@ function App1() {
     <ul> {fruits.map((fruit, index) => ( <li key={index}>{fruit}</li> ))} </ul>
   );    */
 } 
-export default App1; 
+export default App2; 
 
 
 /* import { useState } from 'react'

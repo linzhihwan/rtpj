@@ -23,7 +23,7 @@ const NavBar = () => {
       {/* 메뉴 항목 */}
       <ul style={{ display: "flex", gap: "20px", listStyle: "none" }}>
         <li><Link to="/" style={{ color: "#fff", textDecoration: "none" }}>홈</Link></li>
-        <li><Link to="/about" style={{ color: "#fff", textDecoration: "none" }}>소개</Link></li>
+        <li><Link to="/Partner" style={{ color: "#fff", textDecoration: "none" }}>협력사</Link></li>
         <li><Link to="/contact" style={{ color: "#fff", textDecoration: "none" }}>연락처</Link></li>
       </ul>
     </nav>
