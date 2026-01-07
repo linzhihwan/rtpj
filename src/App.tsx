@@ -7,6 +7,8 @@ import Todo from "./todo.tsx";
 import Three from "./three.tsx";
 import Quiz from "./quiz.tsx";
 import Weather from "./weather.tsx";
+import Portfolio from "./portfolio.tsx";
+import Shopping from "./shopping.tsx";
 
 /* import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
@@ -27,6 +29,8 @@ function App() {
         <Route path="/three" element={<Three />} />
         <Route path="/quiz" element={<Quiz />} />
         <Route path="/weather" element={<Weather />} />
+        <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/shopping" element={<Shopping />} />
 
         {/* "/" 경로 → Welcome 컴포넌트 */}
         <Route path="/" element={<Welcome />} />
