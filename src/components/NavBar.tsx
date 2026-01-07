@@ -28,6 +28,7 @@ const NavBar = () => {
         <li><Link to="/todo" style={{ color: "#fff", textDecoration: "none" }}>TODO</Link></li>
         <li><Link to="/three" style={{ color: "#fff", textDecoration: "none" }}>3N3G</Link></li>
         <li><Link to="/quiz" style={{ color: "#fff", textDecoration: "none" }}>QUIZ</Link></li>
+        <li><Link to="/weather" style={{ color: "#fff", textDecoration: "none" }}>WEATHER</Link></li>
       </ul>
     </nav>
   );
