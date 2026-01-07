@@ -1,8 +1,9 @@
 import NavBar from "./components/NavBar";
 
 export default function Home() {
+  console.log("Welcome 호출!!"); // 정상 로그    
   return (
-    <div style={{ marginTop: "0px",border: "1px solid black", padding: "10px"}}>
+    <div style={{ marginTop: "0px",border: "1px solid black", padding: "10px",fontFamily: "sans-serif" }}>
       <NavBar />        
       <h1>Welcome to Home Page</h1>
       <h1>페이지 내용</h1>

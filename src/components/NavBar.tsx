@@ -14,7 +14,8 @@ const NavBar = () => {
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
-        zIndex: 1000         // 다른 요소보다 위에 표시
+        zIndex: 1000 ,        // 다른 요소보다 위에 표시
+        fontFamily: "sans-serif"
       }}
     >
       {/* 로고 */}

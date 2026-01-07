@@ -7,7 +7,7 @@ function Weather() {
   const [city, setCity] = useState("");
   const [weather, setWeather] = useState<any>(null);
 
-  const API_KEY = "YOUR_OPENWEATHERMAP_API_KEY"; // 🔑 발급받은 키 입력
+  const API_KEY = "bf5aac872f8b15e541eeadb590b68834"; // 🔑 발급받은 키 입력
 
   const getWeather = async () => {
     if (!city.trim()) {
@@ -17,6 +17,7 @@ function Weather() {
     try {
       const res = await axios.get(
         `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric&lang=kr`
+      //  `https://api.openweathermap.org/data/3.0/onecall?lat={lat}&lon={lon}&exclude={part}&appid=${API_KEY}`
       );
       setWeather(res.data);
     } catch (err) {

@@ -34,7 +34,7 @@ function todo() {
   };
 
   return (
-    <div style={{ padding: "20px" }}>
+    <div style={{ padding: "20px", fontFamily: "sans-serif" }}>
       <NavBar />    
       <h1>📝 To-Do List (localStorage)</h1>
       <input

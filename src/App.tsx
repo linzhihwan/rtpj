@@ -16,7 +16,7 @@ function App() {
   return (
     <BrowserRouter>
       <NavBar />
-      <div style={{ marginTop: "60px", padding: "20px" }}>
+      <div style={{ marginTop: "60px", padding: "20px",fontFamily: "sans-serif"  }}>
         {/* NavBar가 fixed라서 내용이 가려지지 않도록 marginTop 추가 */}
         <Routes>
 

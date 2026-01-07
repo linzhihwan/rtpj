@@ -55,7 +55,7 @@ interface partners {
   };
 
   return (
-    <div>
+    <div style={{ padding: "20px", fontFamily: "sans-serif" }}>
       <h1>협력사 코드 전환</h1>
       <input
         placeholder="ccdmd"

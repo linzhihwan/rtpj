@@ -8,6 +8,7 @@
     "allowJs": true, 
     "checkJs": false,
     "baseUrl": "src", 
-    "paths": { "components/*": ["components/*"] }      
+    "paths": { "components/*": ["components/*"] }  ,
+    "types": ["node", "axios"]
   }
 }
