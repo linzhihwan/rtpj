@@ -25,6 +25,9 @@ const NavBar = () => {
         <li><Link to="/" style={{ color: "#fff", textDecoration: "none" }}>홈</Link></li>
         <li><Link to="/Partner" style={{ color: "#fff", textDecoration: "none" }}>협력사</Link></li>
         <li><Link to="/contact" style={{ color: "#fff", textDecoration: "none" }}>연락처</Link></li>
+        <li><Link to="/todo" style={{ color: "#fff", textDecoration: "none" }}>TODO</Link></li>
+        <li><Link to="/three" style={{ color: "#fff", textDecoration: "none" }}>3N3G</Link></li>
+        <li><Link to="/quiz" style={{ color: "#fff", textDecoration: "none" }}>QUIZ</Link></li>
       </ul>
     </nav>
   );

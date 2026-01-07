@@ -26,7 +26,7 @@ let partners = [
 
 // READ
 app.get("/partners", (req, res) => {
-  db.query("SELECT * FROM partner_md", (err, rows) => {
+  db.query("SELECT * FROM partner_md LIMIT 10", (err, rows) => {
     if (err) return res.json(err);
     res.json(rows);
   });

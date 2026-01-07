@@ -3,6 +3,10 @@ import NavBar from "./components/NavBar.tsx";
 
 import Partner from "./Partner.tsx";
 import Welcome from "./welc.tsx";
+import Todo from "./todo.tsx";
+import Three from "./three.tsx";
+import Quiz from "./quiz.tsx";
+
 /* import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage"; */
@@ -15,9 +19,12 @@ function App() {
         {/* NavBar가 fixed라서 내용이 가려지지 않도록 marginTop 추가 */}
         <Routes>
 
-          {/* <Route path="/" element={<h1>홈 화면</h1>} /> */}
-          <Route path="/Partner" element={<Partner />} />
-          <Route path="/contact" element={<h1>연락처 페이지</h1>} />
+        {/* <Route path="/" element={<h1>홈 화면</h1>} /> */}
+        <Route path="/Partner" element={<Partner />} />
+        <Route path="/contact" element={<h1>연락처 페이지</h1>} />
+        <Route path="/todo" element={<Todo />} />
+        <Route path="/three" element={<Three />} />
+        <Route path="/quiz" element={<Quiz />} />
 
         {/* "/" 경로 → Welcome 컴포넌트 */}
         <Route path="/" element={<Welcome />} />
