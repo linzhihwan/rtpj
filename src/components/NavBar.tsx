@@ -32,6 +32,7 @@ const NavBar = () => {
         <li><Link to="/weather" style={{ color: "#fff", textDecoration: "none" }}>WEATHER</Link></li>
         <li><Link to="/portfolio" style={{ color: "#fff", textDecoration: "none" }}>PORTFOLIO</Link></li>
         <li><Link to="/shopping" style={{ color: "#fff", textDecoration: "none" }}>SHOPPING</Link></li>
+        <li><Link to="/mycost" style={{ color: "#fff", textDecoration: "none" }}>MYCOST</Link></li>
       </ul>
     </nav>
   );

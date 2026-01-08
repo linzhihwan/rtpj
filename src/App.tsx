@@ -9,6 +9,7 @@ import Quiz from "./quiz.tsx";
 import Weather from "./weather.tsx";
 import Portfolio from "./portfolio.tsx";
 import Shopping from "./shopping.tsx";
+import Mycost from "./mycost.tsx";
 
 /* import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
@@ -31,6 +32,7 @@ function App() {
         <Route path="/weather" element={<Weather />} />
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/shopping" element={<Shopping />} />
+        <Route path="/mycost" element={<Mycost />} />
 
         {/* "/" 경로 → Welcome 컴포넌트 */}
         <Route path="/" element={<Welcome />} />
