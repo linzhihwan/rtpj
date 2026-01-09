@@ -1,4 +1,4 @@
-import { toast } from 'react-toastify';
+/* import { toast } from 'react-toastify'; */
 
 const COLOR_ARRAY_LENGTH = 100;
 const COLOR_INCREMENT = 3.33;
