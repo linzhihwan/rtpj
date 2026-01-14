@@ -11,6 +11,7 @@ import Portfolio from "./portfolio.tsx";
 import Shopping from "./shopping.tsx";
 import Mycost from "./mycost.tsx";
 import Mychart from "./mychart.tsx";
+import Boardmain from "./boardmain.tsx";
 
 /* import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
@@ -35,6 +36,7 @@ function App() {
         <Route path="/shopping" element={<Shopping />} />
         <Route path="/mycost" element={<Mycost />} />
         <Route path="/mychart" element={<Mychart />} />
+        <Route path="/boardmain" element={<Boardmain />} />
 
         {/* "/" 경로 → Welcome 컴포넌트 */}
         <Route path="/" element={<Welcome />} />

@@ -34,6 +34,7 @@ const NavBar = () => {
         <li><Link to="/shopping" style={{ color: "#fff", textDecoration: "none" }}>SHOPPING</Link></li>
         <li><Link to="/mycost" style={{ color: "#fff", textDecoration: "none" }}>MYCOST</Link></li>
         <li><Link to="/mychart" style={{ color: "#fff", textDecoration: "none" }}>MYCHART</Link></li>
+        <li><Link to="/boardmain" style={{ color: "#fff", textDecoration: "none" }}>BOARD</Link></li>
       </ul>
     </nav>
   );
