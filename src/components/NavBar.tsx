@@ -35,6 +35,7 @@ const NavBar = () => {
         <li><Link to="/mycost" style={{ color: "#fff", textDecoration: "none" }}>MYCOST</Link></li>
         <li><Link to="/mychart" style={{ color: "#fff", textDecoration: "none" }}>MYCHART</Link></li>
         <li><Link to="/boardmain" style={{ color: "#fff", textDecoration: "none" }}>BOARD</Link></li>
+        <li><Link to="/exchangeusd" style={{ color: "#fff", textDecoration: "none" }}>USD환율</Link></li>
       </ul>
     </nav>
   );
