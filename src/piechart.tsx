@@ -16,9 +16,9 @@ const Piechart = () => (
       data={data}
       cx={200}
       cy={200}
-      outerRadius={150}
+      outerRadius={90}
       dataKey="value"
-      label={({ name, percent }) => `${name} ${(percent ?? 0 * 100).toFixed(0)}%`}
+      label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
     >
       {data.map((entry, index) => (
         <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />

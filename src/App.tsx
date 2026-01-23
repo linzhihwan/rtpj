@@ -14,6 +14,7 @@ import Mychart from "./mychart.tsx";
 import Boardmain from "./boardmain.tsx";
 import Exchangeusd from "./exchangeusd.tsx";
 import Piechart from "./piechart.tsx";
+import Fileupload from "./fileupload.tsx";
 
 /* import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
@@ -41,6 +42,7 @@ function App() {
         <Route path="/boardmain" element={<Boardmain />} />
         <Route path="/exchangeusd" element={<Exchangeusd />} />
         <Route path="/piechart" element={<Piechart />} />
+        <Route path="/fileupload" element={<Fileupload />} />
 
         {/* "/" 경로 → Welcome 컴포넌트 */}
         <Route path="/" element={<Welcome />} />
