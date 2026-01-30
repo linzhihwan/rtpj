@@ -15,8 +15,8 @@ function Fileupload() {
     // 서버로 업로드하는 경우 fetch/axios 사용
     const formData = new FormData();
     formData.append("file", file);
-//upload
-    fetch("C:\\DTIT", {
+//upload http://localhost:8080/upload  , C:\\DTIT
+    fetch("http://localhost:8080/upload", {
       method: "POST",
       body: formData,
     })
