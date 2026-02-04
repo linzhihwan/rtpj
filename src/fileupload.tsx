@@ -9,7 +9,7 @@ function Fileupload() {
 
   const handleUpload = () => {
     if (!file) {
-      alert("파일을 선택하세요!");
+      alert("파일을 선택하세요 !");
       return;
     }
     // 서버로 업로드하는 경우 fetch/axios 사용
