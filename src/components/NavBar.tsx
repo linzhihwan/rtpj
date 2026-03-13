@@ -38,6 +38,8 @@ const NavBar = () => {
         <li><Link to="/exchangeusd" style={{ color: "#fff", textDecoration: "none" }}>USD환율</Link></li>
         <li><Link to="/piechart" style={{ color: "#fff", textDecoration: "none" }}>PIECHART</Link></li>
         <li><Link to="/fileupload" style={{ color: "#fff", textDecoration: "none" }}>FILEUPLOAD</Link></li>
+        <li><Link to="/Pulldown" style={{ color: "#fff", textDecoration: "none" }}>DROPDOWN</Link></li>
+        <li><Link to="/chartusdkrw" style={{ color: "#fff", textDecoration: "none" }}>CHARTUSD</Link></li>
       </ul>
     </nav>
   );

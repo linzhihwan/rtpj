@@ -1,10 +1,27 @@
 import express from "express";
 import mysql from "mysql2";
 import cors from "cors";
+import axios from "axios";
+import cheerio from "cheerio";  
 
+const express = require("express");
+const axios = require("axios");
+const cheerio = require("cheerio");
+const cors = require("cors");
+
+//app.use(cors());
+//app.use(express.json());
+// 네이버 환율 정보 조회 html > to text
 const app = express();
 app.use(cors());
-app.use(express.json());
+
+app.get("/api/usdkrw", async (req, res) => {
+  const url = "https://finance.naver.com/marketindex/exchangeDetail.naver?marketindexCd=FX_USDKRW";
+  const response = await axios.get(url);
+  const $ = cheerio.load(response.data);
+  const rate = $(".no_today .blind").first().text();
+  res.json({ rate });
+});
 
 // MySQL 연결
 const db = mysql.createConnection({

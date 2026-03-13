@@ -40,3 +40,13 @@
 .read-the-docs {
   color: #888;
 }
+
+.menu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.menu.open {
+  max-height: 200px;
+}
