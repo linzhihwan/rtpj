@@ -17,6 +17,7 @@ import Piechart from "./piechart.tsx";
 import Fileupload from "./fileupload.tsx";
 import Pulldown from "./Pulldown.tsx";
 import Chartusdkrw from "./chartusdkrw.tsx";
+import Nevrusd from "./nevrusd.tsx";
 
 /* import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
@@ -47,6 +48,7 @@ function App() {
         <Route path="/fileupload" element={<Fileupload />} />
         <Route path="/Pulldown" element={<Pulldown />} />
         <Route path="/chartusdkrw" element={<Chartusdkrw />} />
+        <Route path="/nevrusd" element={<Nevrusd />} />
 
         {/* "/" 경로 → Welcome 컴포넌트 */}
         <Route path="/" element={<Welcome />} />

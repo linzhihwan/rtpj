@@ -22,7 +22,7 @@ const NavBar = () => {
       <div style={{ fontWeight: "bold" }}>MyApp</div>
 
       {/* 메뉴 항목 */}
-      <ul style={{ display: "flex", gap: "20px", listStyle: "none" }}>
+      <ul style={{ display: "flex", gap: "10px", listStyle: "none" }}>
         <li><Link to="/" style={{ color: "#fff", textDecoration: "none" }}>홈</Link></li>
         <li><Link to="/Partner" style={{ color: "#fff", textDecoration: "none" }}>협력사</Link></li>
         <li><Link to="/contact" style={{ color: "#fff", textDecoration: "none" }}>연락처</Link></li>
@@ -40,6 +40,7 @@ const NavBar = () => {
         <li><Link to="/fileupload" style={{ color: "#fff", textDecoration: "none" }}>FILEUPLOAD</Link></li>
         <li><Link to="/Pulldown" style={{ color: "#fff", textDecoration: "none" }}>DROPDOWN</Link></li>
         <li><Link to="/chartusdkrw" style={{ color: "#fff", textDecoration: "none" }}>CHARTUSD</Link></li>
+        <li><Link to="/nevrusd" style={{ color: "#fff", textDecoration: "none" }}>NEVRUSD</Link></li>
       </ul>
     </nav>
   );

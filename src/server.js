@@ -2,12 +2,13 @@ import express from "express";
 import mysql from "mysql2";
 import cors from "cors";
 import axios from "axios";
-import cheerio from "cheerio";  
+//import cheerio from "cheerio";  
+import * as cheerio from "cheerio";
 
-const express = require("express");
-const axios = require("axios");
-const cheerio = require("cheerio");
-const cors = require("cors");
+//const express = require("express");
+//const axios = require("axios");
+//const cheerio = require("cheerio");
+//const cors = require("cors");
 
 //app.use(cors());
 //app.use(express.json());
